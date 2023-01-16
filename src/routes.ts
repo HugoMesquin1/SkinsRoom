@@ -6,6 +6,7 @@ import { CreateBuyerController } from "./modules/buyer/useCases/createBuyer/crea
 import { CreateItemController } from "./modules/itens/useCases/createItem/CreateItemController";
 import { CreateSalesmanController } from "./modules/salesman/useCases/createSalesman/CreateSalesmanController"
 import { FindAllItemsController } from "./modules/itens/useCases/findAllItems/FindAllItemsController";
+import { FindByTypeController } from "./modules/itens/useCases/findByType/FindByTypeController";
 
 const routes = Router()
 
@@ -18,6 +19,8 @@ const authBuyerController = new AuthBuyerController()
 const createItemController = new CreateItemController()
 
 const findAll = new FindAllItemsController()
+
+const findBy = new FindByTypeController()
 
 
 routes.post("/salesman/", createSalesmanController.handle)
@@ -32,6 +35,7 @@ routes.post("/authbuyer", authBuyerController.handle)
 routes.post("/sellskin", EnsureAutheticateClient, createItemController.handle )
 
 routes.get("/findall", EnsureAutheticateClient, findAll.handle )
+routes.get("/finditem/:type_skin", findBy.handle )
 
 
 
