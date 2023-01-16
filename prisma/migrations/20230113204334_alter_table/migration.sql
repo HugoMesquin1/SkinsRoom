@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "item" ALTER COLUMN "float_item" SET DATA TYPE TEXT,
+ALTER COLUMN "price" SET DATA TYPE TEXT;
