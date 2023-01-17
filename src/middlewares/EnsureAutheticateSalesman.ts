@@ -5,7 +5,7 @@ interface IPayload {
     sub: string
 }
 
-export async function EnsureAutheticateClient (request: Request, response:Response, next: NextFunction){
+export async function EnsureAutheticateSalesman (request: Request, response:Response, next: NextFunction){
     const authHeader = request.headers.authorization
 
     if(!authHeader) {

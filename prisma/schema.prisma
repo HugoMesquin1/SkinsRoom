@@ -24,7 +24,7 @@ model Buyer {
   id       String @id @default(uuid())
   username String @unique
   password String
-  item     Item[]
+ 
 
   @@map("buyer")
 }
@@ -38,8 +38,7 @@ model Item {
   salesman    Salesman? @relation(fields: [id_salesman], references: [id])
   id_salesman String?
 
-  buyer    Buyer?  @relation(fields: [id_buyer], references: [id])
-  id_buyer String?
+
 
   @@map("item")
 }
