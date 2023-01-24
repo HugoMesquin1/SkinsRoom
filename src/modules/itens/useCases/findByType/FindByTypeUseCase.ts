@@ -8,6 +8,7 @@ export class FindByTypeUseCase {
             where: {
                 type_skin:{
                     equals: type_skin,
+                    
                 }
                     
             },
@@ -16,17 +17,11 @@ export class FindByTypeUseCase {
                 float_item: true,
                 price: true,
                 type_skin: true,
+                id: true
                 
             }
         });
 
-        
-        
         return FindByType
     }
-
 }
-
-    
-
-

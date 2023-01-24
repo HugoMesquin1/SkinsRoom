@@ -9,21 +9,22 @@ interface ICreateBuyerUseCase{
 
 export class CreateBuyerUseCase{
     async execute({username, password}: ICreateBuyerUseCase) {
-        const BuyerAlreadyExist = await prisma.salesman.findFirst({
+        const BuyerAlreadyExist = await prisma.buyer.findFirst({
             where: {
                 username: {
                     equals: username,
                     mode: "insensitive"
                 }
             }
-
             
-
+            
+            
         })
-
+        
         if (BuyerAlreadyExist){
             throw new Error ( "Este usuário ou email já esta em uso" )
         }
+
 
         const hashPassword = await hash(password, 10)
 

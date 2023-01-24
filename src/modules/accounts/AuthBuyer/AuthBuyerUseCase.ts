@@ -34,10 +34,5 @@ export class AuthBuyerUseCase {
         })
 
         return {token}
-        
-    
-
-
     }
-
 }

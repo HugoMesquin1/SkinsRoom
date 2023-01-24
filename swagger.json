@@ -1,0 +1,17 @@
+{
+    "openapi": "3.0.0",
+    "info" : {
+        "title": "Skins Room",
+        "description": "Uma api feita para encontrar vendedores e compradores de skins de Counter Strike, onde será possível pesquisar itens, e anunciar itens a venda, fazendo um intermediário entre vendedor e comprador",
+        "contact": {
+            "email": "hugomesq1n1@gmail.com",
+            "name": "Hugo Mesquini"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {}
+            
+
+
+        
+}

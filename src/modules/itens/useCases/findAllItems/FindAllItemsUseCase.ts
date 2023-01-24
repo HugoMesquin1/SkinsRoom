@@ -10,7 +10,8 @@ export class FindAllItemsUseCase {
               item_name: true,
               type_skin: true,
               float_item: true,
-              price: true
+              price: true,
+              id: true
             }
         })
 
