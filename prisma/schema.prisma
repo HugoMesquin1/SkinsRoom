@@ -24,7 +24,6 @@ model Buyer {
   id       String @id @default(uuid())
   username String @unique
   password String
- 
 
   @@map("buyer")
 }
@@ -39,6 +38,6 @@ model Item {
   id_salesman String?
 
 
-
   @@map("item")
 }
+

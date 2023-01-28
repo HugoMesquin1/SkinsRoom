@@ -11,7 +11,7 @@ interface ICreateSalesman {
 export class CreateSalesmanUseCase { 
 
     async execute({username, password, contact}: ICreateSalesman) {
-        // Validar se o SalesmanUser já esta em uso
+        
         const SalesmanExist = await prisma.salesman.findFirst({
             where: {
                 username:{
@@ -25,7 +25,7 @@ export class CreateSalesmanUseCase {
             throw new Error("Este usuário já esta em uso.")
         }
             
-        // verificar se o telefone já existe
+        
         const ContactExist = await prisma.salesman.findFirst({
             where: {
                 contact:{
@@ -39,10 +39,10 @@ export class CreateSalesmanUseCase {
             throw new Error ("Este telefone já está em uso.")
         }
 
-        // Criptografar a senha
+        
         const hashPassword = await hash(password, 10)
 
-        // Salvar o vendedor
+        
         const salesman = await prisma.salesman.create({
             data: {
                 username,

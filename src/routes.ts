@@ -10,6 +10,9 @@ import { FindByTypeController } from "./modules/itens/useCases/findByType/FindBy
 import { GetItemController } from "./modules/buyer/useCases/getItem/GetItemController";
 
 
+import { upload } from "./config/Upload";
+import multer from 'multer'
+
 const routes = Router()
 
 const createSalesmanController = new CreateSalesmanController()
@@ -27,9 +30,13 @@ const findBy = new FindByTypeController()
 const getItem = new GetItemController()
 
 
-routes.post("/salesman/", createSalesmanController.handle)
-routes.post("/buyer/", createBuyerController.handle)
 
+
+const uploadImage = multer()
+
+
+routes.post("/salesman", createSalesmanController.handle)
+routes.post("/buyer", createBuyerController.handle)
 
 
 routes.post("/authsalesman", authSalesmanController.handle)
@@ -38,10 +45,11 @@ routes.post("/authbuyer", authBuyerController.handle)
 
 routes.post("/sellskin", EnsureAutheticateSalesman, createItemController.handle )
 
+
 routes.get("/findall", findAll.handle )
 routes.get("/finditem/:type_skin", findBy.handle )
-
 routes.get("/salesmaninfo/:id", getItem.handle )
+
 
 
 
