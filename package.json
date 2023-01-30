@@ -27,5 +27,11 @@
     "jest": "^29.4.1",
     "prisma": "^4.8.1",
     "ts-node-dev": "^2.0.0"
-  }
+  },
+  "name": "SkinsRoom",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/HugoMesquin1/SkinsRoom.git",
+  "author": "Hugo Mesquini <hugomesq1n1@gmail.com>",
+  "license": "MIT"
 }
