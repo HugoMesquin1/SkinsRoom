@@ -25,8 +25,8 @@ const findBy = new FindByTypeController()
 
 const getItem = new GetItemController()
 
-routes.post("/salesman", createSalesmanController.handle)
-routes.post("/buyer", createBuyerController.handle)
+routes.post("/salesman/create", createSalesmanController.handle)
+routes.post("/buyer/create", createBuyerController.handle)
 
 routes.post("/authsalesman", authSalesmanController.handle)
 routes.post("/authbuyer", authBuyerController.handle)
