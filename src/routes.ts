@@ -8,6 +8,7 @@ import { CreateSalesmanController } from "./modules/salesman/useCases/createSale
 import { FindAllItemsController } from "./modules/itens/useCases/findAllItems/FindAllItemsController"
 import { FindByTypeController } from "./modules/itens/useCases/findByType/FindByTypeController"
 import { GetItemController } from "./modules/buyer/useCases/getItem/GetItemController"
+import { deleteItemController } from "./modules/itens/useCases/deleteItem/deleteItemController"
 
 const routes = Router()
 
@@ -18,6 +19,7 @@ const authSalesmanController = new AuthSalesmanController()
 const authBuyerController = new AuthBuyerController()
 
 const createItemController = new CreateItemController()
+const deleteItem = new deleteItemController()
 
 const findAll = new FindAllItemsController()
 
@@ -36,5 +38,7 @@ routes.post("/sellskin", EnsureAutheticateSalesman, createItemController.handle)
 routes.get("/findall", findAll.handle)
 routes.get("/finditem/:type_skin", findBy.handle)
 routes.get("/salesmaninfo/:id", getItem.handle)
+
+routes.delete("/delete", deleteItem.handle)
 
 export { routes }
